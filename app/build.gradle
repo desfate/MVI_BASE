@@ -1,0 +1,90 @@
+import com.live.allo.buildsrc.AppInfoBase
+import com.live.allo.buildsrc.Libs
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId AppInfoBase.applicationId
+        minSdk AppInfoBase.minSdk
+        targetSdk AppInfoBase.targetSdk
+        versionCode AppInfoBase.versionCode
+        versionName AppInfoBase.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    // hint
+    kapt Libs.Google.compiler
+    implementation Libs.Google.android
+
+    // androidX
+    implementation Libs.AndroidX.coreKtx
+    implementation Libs.AndroidX.appcompat
+    implementation Libs.AndroidX.Material.material
+    implementation Libs.AndroidX.Layout.constraintLayout
+    implementation Libs.AndroidX.Lifecycle.viewmodel
+    implementation Libs.AndroidX.Lifecycle.viewModelCompose
+    implementation Libs.AndroidX.swipeRefreshLayout
+
+    // navigation
+    implementation Libs.AndroidX.Navigation.fragment
+    implementation Libs.AndroidX.Navigation.uiKtx
+
+    // room
+    implementation Libs.AndroidX.Room.runtime
+    implementation Libs.AndroidX.Room.ktl
+    implementation Libs.AndroidX.Room.compiler
+
+    // workManager
+    implementation Libs.AndroidX.Work.ktx
+
+    // datastore
+    implementation Libs.AndroidX.Datastore.preferences_core
+    implementation Libs.AndroidX.Datastore.datastore_preferences
+
+    // retrofit
+    implementation Libs.SquareUp.Retorfit.retrofit
+    implementation Libs.SquareUp.Retorfit.adapter
+    implementation Libs.SquareUp.Retorfit.converter
+    implementation Libs.SquareUp.OkHttp3.okhttp
+    implementation Libs.SquareUp.OkHttp3.interceptor
+
+    // autoDispose
+    implementation Libs.uber.android
+    implementation Libs.uber.lifecycle
+
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    implementation "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"
+}
