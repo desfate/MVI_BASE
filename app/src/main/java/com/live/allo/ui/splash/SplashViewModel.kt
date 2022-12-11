@@ -5,7 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 /**
  *  启动页ViewModel
  */
-@HiltViewModel
+//@HiltViewModel
 class SplashViewModel : ViewModel() {
 
 
