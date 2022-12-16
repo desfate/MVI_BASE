@@ -18,9 +18,12 @@ package com.live.allo.buildsrc
 
 // Gradle 插件版本相关配置
 object Versions {
-    const val ktlGradleTools = "7.0.2"
-    const val ktlGradlePlugin = "1.5.31"
+    const val ktlGradleTools = "7.3.1"
+    const val ktlGradlePlugin = "1.6.10"
     const val ktlDagger = "2.41"
+
+    const val jvmTarget = "1.8"
+    const val kotlinCompilerExtensionVersion = "1.1.1"
 }
 
 // 应用基础信息相关配置
@@ -97,22 +100,25 @@ object Libs {
         // compose ui
         object Compose {
             const val snapshot = ""
-            const val version = "1.0.0-beta07"
+            const val ui_version = "1.1.1"
+            const val activity_version = "1.3.1"
 
             @get:JvmStatic
             val snapshotUrl: String
                 get() = "https://androidx.dev/snapshots/builds/$snapshot/artifacts/repository/"
 
-            const val foundation = "androidx.compose.foundation:foundation:$version"
-            const val layout = "androidx.compose.foundation:foundation-layout:$version"
-            const val material = "androidx.compose.material:material:$version"
+            const val activity_compose = "androidx.activity:activity-compose:$activity_version"
+            const val ui = "androidx.compose.ui:ui:$ui_version"
+            const val ui_tooling = "androidx.compose.ui:ui-tooling-preview:$ui_version"
+            const val material = "androidx.compose.material:material:$ui_version"
+
+            const val foundation = "androidx.compose.foundation:foundation:$ui_version"
+            const val layout = "androidx.compose.foundation:foundation-layout:$ui_version"
+
             const val materialIconsExtended =
-                "androidx.compose.material:material-icons-extended:$version"
-            const val runtime = "androidx.compose.runtime:runtime:$version"
-            const val runtimeLivedata = "androidx.compose.runtime:runtime-livedata:$version"
-            const val tooling = "androidx.compose.ui:ui-tooling:$version"
-            const val test = "androidx.compose.test:test-core:$version"
-            const val uiTest = "androidx.compose.ui:ui-test:$version"
+                "androidx.compose.material:material-icons-extended:$ui_version"
+            const val runtime = "androidx.compose.runtime:runtime:$ui_version"
+            const val runtimeLivedata = "androidx.compose.runtime:runtime-livedata:$ui_version"
         }
 
         // fragment管理
@@ -352,13 +358,13 @@ object Libs {
     // 柯基 通用工具类
     // 依赖 AndroidX https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
     // 非依赖源 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/subutil/README-CN.md
-    object blankj{
+    object blankj {
         private const val ucVersion = "1.31.1"
         const val runtime = "com.blankj:utilcodex:$ucVersion"
     }
 
     // svga播放器 https://github.com/svga/SVGAPlayer-Android
-    object yyued{
+    object yyued {
         private const val version = "latest"
         const val runtime = "com.github.yyued:SVGAPlayer-Android:$version"
     }

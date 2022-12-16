@@ -9,7 +9,4 @@ open class BaseApplication: Application() {
         super.attachBaseContext(base)
     }
 
-    override fun onCreate() {
-        super.onCreate()
-    }
 }

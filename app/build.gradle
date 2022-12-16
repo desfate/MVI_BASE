@@ -1,5 +1,6 @@
 import com.live.allo.buildsrc.AppInfoBase
 import com.live.allo.buildsrc.Libs
+import com.live.allo.buildsrc.Versions
 
 plugins {
     id 'com.android.application'
@@ -31,10 +32,14 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = Versions.jvmTarget
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.kotlinCompilerExtensionVersion
     }
     buildFeatures {
         viewBinding true
+        compose = true
     }
 }
 
@@ -79,6 +84,12 @@ dependencies {
     // autoDispose
     implementation Libs.uber.android
     implementation Libs.uber.lifecycle
+
+    // compose
+    implementation Libs.AndroidX.Compose.activity_compose
+    implementation Libs.AndroidX.Compose.ui
+    implementation Libs.AndroidX.Compose.ui_tooling
+    implementation Libs.AndroidX.Compose.material
 
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
 
