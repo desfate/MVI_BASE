@@ -56,6 +56,7 @@ dependencies {
     implementation Libs.AndroidX.Layout.constraintLayout
     implementation Libs.AndroidX.Lifecycle.viewmodel
     implementation Libs.AndroidX.Lifecycle.viewModelCompose
+    implementation Libs.AndroidX.Lifecycle.runtime
     implementation Libs.AndroidX.swipeRefreshLayout
 
     // navigation

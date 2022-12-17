@@ -88,8 +88,8 @@ object Libs {
         // 生命周期管理
         object Lifecycle {
             private const val version = "2.3.1"
-            const val viewModelCompose =
-                "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha05"
+            const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha05"
+            const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
             const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
         }
 
