@@ -40,7 +40,6 @@ class ComposeMainActivity : ComponentActivity() {
             items(100) {
                 Text(text = composeMainViewModel.text.value + "$it")
             }
-
         }
     }
 
