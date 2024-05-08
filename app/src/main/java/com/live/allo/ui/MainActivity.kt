@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.collect
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.live.allo.R
 import com.live.allo.databinding.ActivityMainBinding
+import com.live.allo.ui.base.CustomerStyleActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         viewModel.viewModelScope.launch {
