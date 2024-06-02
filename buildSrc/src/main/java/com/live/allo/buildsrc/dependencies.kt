@@ -31,7 +31,7 @@ object AppInfoBase {
     const val applicationId = "com.live.allo"
     const val buildToolsVersion = "30.0.3"
     const val compileSdk = 30
-    const val minSdk = 21
+    const val minSdk = 23
     const val targetSdk = 32
     const val versionCode = 10000
     const val versionName = "1.0.000"
